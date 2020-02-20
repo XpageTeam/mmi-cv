@@ -1,0 +1,46 @@
+@import "../css/common.css"
+@import "../css/jquery.fancybox.css"
+
+@import "_vars.sss"
+@import "_base.sss"
+@import "_form-elements.sss"
+@import "btns.sss"
+
+@import "base-form.sss"
+@import "my-select.sss"
+
+@import "header/header.sss"
+@import "footer.sss"
+// @import "loading.sss"
+
+@import "last-seen/last-user.sss"
+@import "user-list/user-list.sss"
+
+// @import "photos-list.sss"
+// @import "drag-drop-field.sss"
+
+
+// @import "user-detail/user-detail.sss"
+// @import "profile-edit/profile-edit.sss"
+
+@font-face
+	font-family: Gilroy
+	font-style: normal
+	font-weight: 400
+	src: url(../fonts/Gilroy-Regular.woff) format("woff"), url(../fonts/Gilroy-Regular.woff2) format("woff2")
+	font-display: swap
+
+#content
+	margin: 40px 0 0
+
+.file-btn
+	position: relative
+
+	&__input
+		position: absolute 0 * * 0
+		opacity: 0
+		pointer-events: none
+
+@media (max-width: 1400px)
+	:root
+		--inline-padding: 25px

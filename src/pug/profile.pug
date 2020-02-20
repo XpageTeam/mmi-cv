@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Профиль
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-page
+				.inner-page__content
+					.wrapper
+						.user-profile
+							.user-profile__about
+								.u-about
+									.u-about__profile
+										.user
+											figure.user__img
+												img(src="img/photos/user-detail-img.jpg")
+												<!-- user-dot--absence если отсутствует -->
+												.user-dot.user-dot--working
+											.user__desc
+												.ud
+													.ud__name Дмитрий Жердев
+													.ud__status 
+														<!-- user-status--absence если отсутствует -->
+														.user-status.user-status--working Работает
+									.u-about__pos
+										.ud
+											.ud__row
+												.ud__row-title Должность
+												.ud__row-text Руководитель отдела разработки
+											.ud__row
+												.ud__row-title Подразделение
+												.ud__row-text Отдел разработки
+									.u-about__time
+										.u-time
+											.u-time__title Провел на работе
+											.u-time__time 08:13:35
+									.u-about__btns
+										.lu-btns
+											.lu-btns__item
+												a.default-btn.default-btn--bordered(href="#")
+													include ../img/ico-photo.svg
+													span.defaul-btn__text Показать последнее фото
+											.lu-btns__item
+												a.default-btn(href="#") 
+													span.default-btn__text Редактировать профиль
+							.user-profile__table
+								.users-list__title Сотрудники компании
+								.users-list__sort
+									form(action="#")
+										.ul-sort
+											.ul-sort__search
+												.default-input
+													select.default-input__input.default-input__input--select
+														- for (let i = 1; i <= 31; i++)
+															option(value=i) Показать статистику за неделю
+											.ul-sort__print
+												a.default-btn.default-btn--bordered.fancybox(href="#print-stats")
+													include ../img/ico-print.svg
+													span.default-btn__text Распечатать статистику
+											.ul-sort__selects 
+												.sort-selects
+													.sort-selects__item
+														.default-input
+															select.default-input__input.default-input__input--select
+																- for (let i = 1; i <= 31; i++)
+																	option(value=i)=i
+													.sort-selects__item
+														.default-input
+															select.default-input__input.default-input__input--select
+																option(value="0") Январь
+																option(value="1") Январь
+																option(value="2") Январь
+																option(value="3") Январь
+																option(value="4") Январь
+																option(value="5") Январь
+													.sort-selects__item
+														.default-input
+															select.default-input__input.default-input__input--select
+																option(value="0") Сортировать по: дате (посление замеченные)
+																option(value="1") Сортировать по: дате (посление замеченные)
+																option(value="2") Сортировать по: дате (посление замеченные)
+																option(value="3") Сортировать по: дате (посление замеченные)
+																option(value="4") Сортировать по: дате (посление замеченные)
+								.users-list__table
+									table.ul-table
+										thead
+											tr
+												th Дата
+												th 
+													div Камера на входе
+													div (первая запись)
+												th 
+													div Камера на входе 
+													div (последняя запись)
+												th 
+													div Камера на входе
+													div (последняя запись)
+												th Отсутствовал на работе
+												th Провел на работе
+										tbody
+											- for (let i = 23; i <= 28; i++)
+												tr
+													td 
+														div=i+".01.2020"
+													td 
+														div 08:40:03
+															a.photo(data-fancybox="" href="#")
+													td 
+														div 08:39:03
+															a.photo(data-fancybox="" href="#")
+													td 
+														div 18:40:03
+															a.photo(data-fancybox="" href="#")
+													td 
+														div 01:05:35
+													td 
+														div 09:13:35
+		include inc/footer.pug
+		include inc/scripts.pug

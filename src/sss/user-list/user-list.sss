@@ -1,0 +1,42 @@
+// @import "user-sort.sss"
+@import "users-talbe.sss"
+
+.users-list
+	margin: 40px 0 0
+
+	&__title
+		border-radius: 10px 10px 0 0 
+		font-weight: 500
+		font-size: em(20)
+		padding: 20px var(--inline-padding)
+		border-bottom: 1px solid var(--border-color)
+
+	&__title, &__sort, &__table
+		background: #fff
+
+	&__table
+		border-radius: 0 0 10px 10px
+		overflow-x: auto
+
+		&::-webkit-scrollbar
+			height: 25px
+
+			&-thumb, &-track
+				border-top: 15px solid #fff
+
+			&-thumb
+				background: var(--main-color)
+
+			&-track
+				background: var(--border-color)
+
+	&__btn
+		text-align: center
+		margin: 40px 0 0
+
+	&__sort, &__title
+		border-bottom: 1px solid var(--border-color)
+
+@media (max-width: 1400px)
+	.users-list
+		position: relative

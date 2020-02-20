@@ -1,0 +1,92 @@
+.ul-table
+	width: 100%
+
+	th
+		text-align: left
+		color: #909090
+		font-size: em(14)
+		padding-block: 22px
+
+		&:first-child
+			padding-left: em(140)
+
+	td
+		padding-block: 22px
+		
+		&:first-child
+			padding-left: em(120)
+
+	td, th
+		vertical-align: middle 
+		padding-inline: 16px
+		border-bottom: 1px solid var(--border-color)
+
+		&:last-child
+			padding-right: var(--inline-padding)
+
+	.photo
+		margin-left: 16px
+
+.photo
+	display: inline-block
+	background: url("../img/ico-photo.svg") center no-repeat
+	size: 16px 15px
+
+.ul-user
+	display: flex
+	align-items: center
+
+	&__img
+		border-radius: 50%
+		position: relative
+		size: 70px
+		flex: none
+		margin-right: 16px
+
+		img
+			display: block
+			size: 100%
+			object-fit: cover
+			object-position: center
+			border-radius: inherit
+
+	&__name
+		font-weight: 500
+
+		&[href]
+
+			&:hover
+				color: var(--main-color)
+
+.row-status
+	border-left: 3px solid
+
+	&--large
+		border-left-color: #4DC38B
+
+	&--no_salers
+		border-left-color: #DC5252
+
+	&--only_salers
+		border-left-color: #FFB877
+
+	&--small
+		border-left-color: #FFF177
+
+@media (max-width: 1400px)
+	.ul-table
+		min-width: 1300px
+
+		--inline-padding: 20px
+
+		thead
+			font-size: 12px
+
+		tbody
+			font-size: 14px
+
+		td, th
+			padding-inline: 10px
+
+	.ul-sort__print
+		position: absolute 13px var(--inline-padding) * *

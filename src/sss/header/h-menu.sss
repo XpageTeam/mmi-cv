@@ -1,0 +1,14 @@
+.h-menu
+	display: flex
+
+	> li
+
+		&:not(:last-child)
+			margin-right: vw(40)
+
+	&__link
+		transition: color .3s ease
+		font-weight: 500
+
+		&:matches(:hover, :focus)
+			color: var(--main-color)

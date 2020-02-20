@@ -1,0 +1,49 @@
+.ul-sort
+	display: flex
+	align-items: flex-start
+	padding: 24px var(--inline-padding)
+
+	&__selects
+		margin-left: auto
+
+	&__search
+		width: 480px
+		margin-right: 16px
+
+	&__print
+		display: flex
+		flex-direction: column
+
+		.default-btn
+			flex: 1 1 auto
+
+			&:not(:hover, :focus)
+				border-color: var(--border-color)
+
+.sort-selects
+	display: flex
+	flex-direction: column-reverse
+	align-items: flex-end
+
+	&__item
+
+		&:not(:last-child)
+			margin-right: 16px
+
+.date-selects
+	display: flex
+	margin: 10px 0 0
+
+	> div
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-end
+
+		&:not(:last-child)
+			margin-right: 16px
+
+	&__title
+		font-size: .75em
+		color: #919191
+		margin: 0 0 5px
+		width: calc(100% - 16px)

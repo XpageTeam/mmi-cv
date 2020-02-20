@@ -1,0 +1,47 @@
+.photos-list
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: -12px
+
+	&__item
+		margin-bottom: 12px
+
+		&:not(:last-child)
+			margin-right: 12px
+
+.p-item
+	position: relative
+
+	&__img
+
+		img
+			display: block
+			border-radius: 6px
+
+	&__remove
+		size: 28px
+		position: absolute 0 0 * *
+		background: url("../img/ico-remove.svg") center no-repeat
+
+	&__loader
+		position: absolute 0
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		background: linear-gradient(rgba(237, 245, 252, 0.6), rgba(255,255,255, .1))
+
+		&-bar
+			height: 8px
+			align-self: stretch
+			margin: 0 calc((100% - persent(99, 131)) / 2)
+			border: 1px solid var(--main-color)
+			border-radius: 6px
+			background: #ffffff
+
+		&-progress
+			border-radius: inherit
+			transform-origin: left
+			transform: scaleX(0)
+			size: 100%
+			background: var(--main-color)

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Профиль - редактирование
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-page
+				.inner-page__content
+					.wrapper
+						.user-edit
+							.user-edit__title Редактирование профиля
+							.user-edit__form
+								form(action="#")
+									.ue-form
+										.ue-form__text
+											.ue-form__img
+												.user
+													figure.user__img
+														img(src="img/photos/user-edit-img.jpg")
+														<!-- user-dot--absence если отсутствует -->
+														.user-dot.user-dot--working
+											.ue-form__inputs 
+												.form__inputs.form__inputs--3
+													.form__inputs-input
+														.default-input
+															input.default-input__input(type="text" required="" value="Дмитрий")
+															label.default-input__label Имя сотрудника
+													.form__inputs-input
+														.default-input
+															input.default-input__input(type="text" value="Анатольевич")
+															label.default-input__label Отчество сотрудника
+													.form__inputs-input
+														.default-input
+															input.default-input__input(type="text" required="" value="Жердев")
+															label.default-input__label Фамилия сотрудника
+													.form__inputs-input
+														.default-input
+															input.default-input__input(type="text" value="Руководитель отдела разработки")
+															label.default-input__label Должность
+													.form__inputs-input
+														.default-input
+															input.default-input__input(type="text"  value="Отдел разработки")
+															label.default-input__label Подразделение
+										.ue-form__photos
+											.ue-photos
+												.form__inputs.form__inputs--3
+													.form__inputs-input
+														.default-input
+															input.default-input__input.default-input__input--file(type="file" id="file" multiple="")
+															.default-input__input-filetext
+																input.default-input__input(type="text" placeholder="Прикрепите фотографии" readonly="")
+																label.default-input__label--file(for="file")
+															label.default-input__label Фотографии для распознования
+												.ue-photos__list
+													.photos-list
+														.photos-list__item
+															.p-item
+																figure.p-item__img
+																	img(src="img/photos/removable-img.jpg")
+																a.p-item__remove(href="#")
+														.photos-list__item
+															.p-item
+																figure.p-item__img
+																	img(src="img/photos/removable-img.jpg")
+																a.p-item__remove(href="#")
+														.photos-list__item
+															.p-item
+																figure.p-item__img
+																	img(src="img/photos/removable-img.jpg")
+																a.p-item__remove(href="#")
+														.photos-list__item
+															.p-item
+																figure.p-item__img
+																	img(src="img/photos/removable-img.jpg")
+																a.p-item__remove(href="#")
+														.photos-list__item
+															.p-item
+																figure.p-item__img
+																	img(src="img/photos/removable-img.jpg")
+																a.p-item__remove(href="#")
+																.p-item__loader
+																	.p-item__loader-bar
+																		.p-item__loader-progress(style="transform: scaleX(.75)")
+																		<!-- от 0 до 1 -->
+												.ue-photos__drag
+													.drag-drop-field(draggable="true")
+														figure.drag-drop-field__img
+															img(src="img/ico-tap.svg")
+														figcaption.drag-drop-field__text Перетащи фотографии
+										.ue-form__btns
+											input.default-btn(type="submit" value="Сохранить изменения")
+											a.default-btn.default-btn--bordered(href="#") Отмена
+		include inc/footer.pug
+		include inc/scripts.pug 

@@ -1,0 +1,32 @@
+@import "h-menu.sss"
+
+.head
+	background: #fff
+	padding: em(25) 0
+	box-shadow: var(--default-shadow)
+	position: sticky
+	top: 0
+	z-index: 2
+
+	&__wrap
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+.logo
+	display: block
+
+	img
+		display: block
+
+.h-btns
+	display: flex
+
+	&__item	
+
+		&:not(:last-child)
+			margin-right: 16px
+
+@media (max-width: 1400px)
+	.head
+		padding: 15px 0

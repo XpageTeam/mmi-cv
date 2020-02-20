@@ -1,0 +1,59 @@
+.filters-time
+	flex: 1 1 auto
+	display: flex
+	flex-direction: column
+
+	&__time, &__filters
+		flex: 1 1 auto
+		display: flex
+		flex-direction: column
+		background: #fff
+		border-radius: 6px
+
+		&:not(:first-child)
+			margin: 37px 0 0
+		
+
+.filters, .f-time
+	padding: 40px 55px
+	flex: 1 1 auto
+
+.filters
+
+	&__title
+		font-weight: 500
+		font-size: em(20)
+		margin: 0 0 30px
+
+.filters-content
+	max-width: 500px
+
+	&__row
+		display: flex
+		margin: 0 0 0 -52px
+
+		&-item
+			width: calc((100% - 52px * 2) / 2)
+			margin: 0 0 20px 52px
+			white-space: nowrap
+			
+			.default-input
+				display: inline-block
+
+				&:not(:last-child)
+					margin-right: 4px
+
+
+.f-time
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 0 -40px
+
+	&__item
+		width: calc((100% - 40px * 3) / 3)
+		margin: 0 0 0 40px
+
+		&-title
+			font-size: 14px
+			color: #909090
+			margin: 0 0 10px

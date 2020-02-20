@@ -1,0 +1,49 @@
+.user-edit
+	background: #fff
+	border-radius: 10px
+
+	&__title
+		border-bottom: 1px solid var(--border-color)
+		padding: 20px var(--inline-padding)
+		font-size: em(20)
+		font-weight: 500
+
+.ue-form
+
+	&__text
+		display: flex
+		align-items: center
+		padding: 21px var(--inline-padding)
+		border-bottom: 1px solid var(--border-color)
+
+	&__btns
+		padding: 24px var(--inline-padding) 48px
+		display: flex
+		margin-left: 112px
+
+		.default-btn
+
+			&:not(:last-child)
+				margin-right: 16px
+	
+	&__photos
+		border-bottom: 1px solid var(--border-color)
+		padding: 24px var(--inline-padding) 24px calc(112px + var(--inline-padding))
+
+
+
+	&__img
+		flex: none
+		margin-right: 24px
+
+		.user__img
+			size: 90px
+
+	&__inputs
+		flex: 1 1 auto
+		max-width: 1082px
+
+.ue-photos
+	
+	&__list, &__drag
+		margin: 24px 0 0		

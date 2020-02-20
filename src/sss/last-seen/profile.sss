@@ -1,0 +1,160 @@
+.last-user
+	background: #fff
+	border-radius: 10px
+	box-shadow: var(--default-shadow)
+	flex: 1 1 auto
+
+	&__title, &__profile, &__btns, &__summary
+		flex: none
+
+	&__title
+		color: #212121
+		font-size: em(20)
+		font-weight: 500
+		border-bottom: 1px solid var(--border-color)
+		padding: 20px var(--inline-padding)
+
+	&__profile
+		padding: 24px var(--inline-padding) 32px
+
+	&__list 
+		flex: 1 1 auto
+
+	&__btns
+		padding: 0 var(--inline-padding) 32px
+		border-bottom: 1px solid var(--border-color)
+
+	&__summary
+		padding: 15px var(--inline-padding) 27px
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+		&-title
+			font-weight: 500
+
+.lu-btns
+	display: flex
+
+	&__item
+
+		&:not(:last-child)
+			margin-right: 16px
+
+
+
+.user
+	display: flex
+	align-items: center
+
+	&__img
+		border-radius: 50%
+		flex: none
+		size: 90px
+		position: relative
+
+		&:not(:last-child)
+			margin-right: 24px
+
+		img
+			display: block
+			border-radius: inherit
+			size: 100%
+			object-fit: cover
+			object-position: center
+
+	&__desc
+		flex: 1 1 auto
+
+.ud
+	position: relative
+
+	&__status
+		position: absolute 6px 0 * *
+
+	&__name
+		font-weight: 500
+		font-size: em(18)
+		margin: 0 0 10px
+
+		&[href]
+
+			&:hover
+				color: var(--main-color)
+
+	&__row
+
+		&:not(:last-child)
+			margin: 0 0 10px
+
+		&-title
+			font-size: em(12)
+
+		&-text
+			line-height: calc(22 / 16)
+			margin: 3px 0 0
+
+
+.user-status, .user-dot
+
+	&--working
+		color: var(--main-color)
+
+	&--absence
+		color: #EB5757
+
+.user-status
+	font-size: em(12)
+
+.user-dot
+	border-radius: 50%
+	size: 12px
+	border: 2px solid #fff
+	background-color: currentColor
+	position: absolute 1% 17% * *
+
+.lu-list
+
+	&__row
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 15px var(--inline-padding)
+		border-bottom: 1px solid var(--border-color)
+
+		.subtitle
+			color: #909090
+			font-size: em(14)
+
+		&-camera
+			width: 160px
+
+		&-date
+			width: 100px
+
+@media (max-width: 1400px)
+	.last-user
+		display: grid
+		grid-template-areas: "title title" "profile list" "btns summary"
+		grid-template-columns: minmax(480px, 40%) 1fr
+		// gap: 30px
+
+		&__title
+			grid-area: title
+		
+		&__profile
+			grid-area: profile
+
+		&__btns
+			grid-area: btns
+			border-top: 1px solid var(--border-color)
+			padding-top: 15px
+			border-bottom: none
+
+		&__list
+			grid-area: list
+			border-left: 1px solid var(--border-color)
+		
+		&__summary
+			grid-area: summary
+			border-left: 1px solid var(--border-color)
