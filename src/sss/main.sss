@@ -41,6 +41,18 @@
 		opacity: 0
 		pointer-events: none
 
+.js__loading
+	position: relative
+
+	&:after
+		content: ""
+		position: absolute 0
+		background: url("../img/ico-loader.svg") center no-repeat, rgba(255,255,255, .6)
+
 @media (max-width: 1400px)
 	:root
 		--inline-padding: 25px
+
+@media (max-width: 660px)
+	#content
+		margin: 20px 0 0

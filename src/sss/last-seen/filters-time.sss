@@ -26,15 +26,19 @@
 		margin: 0 0 30px
 
 .filters-content
-	max-width: 500px
+	// max-width: 500px
+	margin: 0 0 0 -52px
+	display: flex
+	flex-wrap: wrap
 
 	&__row
-		display: flex
-		margin: 0 0 0 -52px
+		width: calc((100% - 52px * 2) / 2)
+		margin: 0 0 20px 52px
+		// margin: 0 0 0 -52px
 
 		&-item
-			width: calc((100% - 52px * 2) / 2)
-			margin: 0 0 20px 52px
+			// width: calc((100% - 52px * 2) / 2)
+			// margin: 0 0 20px 52px
 			white-space: nowrap
 			
 			.default-input
@@ -57,3 +61,37 @@
 			font-size: 14px
 			color: #909090
 			margin: 0 0 10px
+
+
+
+@media (max-width: 660px)
+	.filters, .f-time
+		padding: 20px 
+
+	.filters
+
+		&__title
+			margin: 0 0 10px
+
+	.filters-content
+		display: block
+		margin: 0
+
+		&__row
+			width: 100%
+			margin: 0
+
+			&:not(:first-child)
+				margin: 20px 0 0
+
+			&-item
+
+				&:not(:first-child)
+					margin: 20px 0 0
+
+	.f-time
+		margin: 0 0 -20px -20px
+
+		&__item
+			width: calc((100% - 20px * 2) / 2)
+			margin: 0 0 20px 20px

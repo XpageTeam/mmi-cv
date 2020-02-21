@@ -67,11 +67,17 @@
 	&--no_salers
 		border-left-color: #DC5252
 
+	&--empty
+		border-left-color: #DC5252
+
 	&--only_salers
 		border-left-color: #FFB877
 
 	&--small
 		border-left-color: #FFF177
+
+	&--closed
+		border-left-color: #dbdbdb
 
 @media (max-width: 1400px)
 	.ul-table
@@ -90,3 +96,80 @@
 
 	.ul-sort__print
 		position: absolute 13px var(--inline-padding) * *
+
+
+
+@media (max-width: 660px)
+	.users-list
+		
+		&__table
+			overflow: visible
+			background: none !important
+
+	.ul-table
+		min-width: 0
+		display: block
+
+		thead
+			display: none
+
+		tbody
+			display: block
+
+		tr
+			display: flex
+			flex-wrap: wrap
+			background: #fff
+
+			&:not(:first-child)
+				margin: 10px 0 0
+
+		td
+			width: 100%
+			padding: 20px !important
+			text-align: left
+
+			&[data-title]
+				display: flex
+
+				&::before
+					content: attr(data-title) ": "
+					display: inline-block
+					margin-right: 10px
+					width: 90px
+					font-weight: bold
+
+	.row-status
+
+		~ td
+			border-left: 3px solid
+
+		&--large
+
+			~ td
+				border-left-color: #4DC38B	
+
+		&--no_salers
+
+			~ td
+				border-left-color: #DC5252	
+
+		&--empty
+
+			~ td
+				border-left-color: #DC5252	
+
+		&--only_salers
+
+			~ td
+				border-left-color: #FFB877	
+
+		&--small
+
+			~ td
+				border-left-color: #FFF177	
+
+		&--closed
+
+			~ td
+				border-left-color: #dbdbdb	
