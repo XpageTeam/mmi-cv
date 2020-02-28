@@ -65,24 +65,59 @@
 
 .row-status
 	border-left: 3px solid
+	position: relative
+
+	> div
+		position: relative
+		z-index: 1
+
+	~ td
+		position: relative
+
+		> div
+			position: relative
+			z-index: 1
+
+	&:after, ~ td:after
+		content: ""
+		position: absolute 0
+		opacity: .13
 
 	&--large
 		border-left-color: #4DC38B
+		
+		&:after, ~ td:after
+			background-color: #4DC38B
 
 	&--no_salers
 		border-left-color: #DC5252
+		
+		&:after, ~ td:after
+			background-color: #DC5252
 
 	&--empty
 		border-left-color: #DC5252
+		
+		&:after, ~ td:after
+			background-color: #DC5252
 
 	&--only_salers
 		border-left-color: #FFB877
+		
+		&:after, ~ td:after
+			background-color: #FFB877
 
 	&--small
 		border-left-color: #FFF177
+		
+		&:after, ~ td:after
+			background-color: #FFF177
 
 	&--closed
 		border-left-color: #dbdbdb
+		
+		&:after, ~ td:after
+			background-color: #dbdbdb
 
 @media (max-width: 1400px)
 	.ul-table
@@ -110,32 +145,28 @@
 		&__table
 			overflow: visible
 			background: none !important
+			border-radius: 0 !important
 
 	.ul-table
 		min-width: 0
-		display: block
 
 		thead
 			display: none
 
-		tbody
-			display: block
-
 		tr
-			display: flex
-			flex-wrap: wrap
 			background: #fff
 
 			&:not(:first-child)
 				margin: 5px 0 0
 
 		td
-			// width: 100%
-			padding: 5px !important
 			text-align: left
+			font-size: em(18)
+			padding-block: 25px
 
 			&:first-child
 				width: 35%
+				padding-left: 40px
 
 			&:nth-child(2)
 				width: 65%
@@ -154,17 +185,7 @@
 			// 		font-weight: bold
 
 	.row-status
-		border-top: 3px solid
-		border-bottom: 3px solid !important
-		border-left: 3px solid 
-
-		~ td
-			border-top: 3px solid
-			border-bottom: 3px solid !important
-			border-left: 3px solid 
-
-			&:nth-child(2)
-				border-right: 3px solid 
+		border-left: 7px solid 
 
 		&--large
 			border-color: #4DC38B !important

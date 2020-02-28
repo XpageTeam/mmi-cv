@@ -145,30 +145,30 @@ html(lang="ru")
 						table.ul-table
 							thead
 								tr
-									th Дата
-									th Ситуация
 									th Время
-									th Фото
+									th Ситуация
+									th Дата
+									//- th Фото
 							tbody
 								each date, i in [{title: "23 января 2020", status: "Много людей"}, {title: "28 января 2020", status: "Нет продавцов"}, {title: "29 января 2020", status: "Только продавцы"}, {title: "01 февраля 2020", status: "Мало людей"}, {title: "02 февраля 2020", status: "Много людей"}, {title: "08 февраля 2020", status: "Много людей"}, {title: "14 февраля 2020", status: "Много людей"}]
 									tr
 										if (date.status == "Много людей")
 											td.row-status.row-status--large(data-title="Дата")
-												div=date.title
+												div 16:40
 										else if (date.status == "Нет продавцов")
 											td.row-status.row-status--no_salers(data-title="Дата")
-												div=date.title
+												div 16:40
 										else if (date.status == "Только продавцы")
 											td.row-status.row-status--only_salers(data-title="Дата")
-												div=date.title
+												div 16:40
 										else if (date.status == "Мало людей")
 											td.row-status.row-status--small(data-title="Дата")
-												div=date.title
+												div 16:40
 										td(data-title="Ситуация")
 											div=date.status
 										td(data-title="Время")
-											div 16:40
-										td(data-title="Фото")
+											div=date.title
+										//- td(data-title="Фото")
 											div 08:40:03
 												a.photo(data-fancybox="" href="#")
 					.users-list__btn
