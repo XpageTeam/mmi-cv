@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.last-seen
+					.last-seen__profile
+						.filters-time
+							.filters-time__filters
+								form.filters(action="#")
+									.filters__title Фильтры
+									.filters__content
+										.filters-content
+											.filters-content__row
+												- for (let i = 0; i < 1; i++)
+													.filters-content__row-item
+														.default-input
+															select.default-input__input.default-input__input--select
+																option(value="0") 23
+																option(value="1") 23
+																option(value="2") 23
+																option(value="3") 23
+																option(value="4") 23
+																option(value="5") 23
+														.default-input
+															select.default-input__input.default-input__input--select
+																option(value="0") Январь
+																option(value="1") Январь
+																option(value="2") Январь
+																option(value="3") Январь
+																option(value="4") Январь
+																option(value="5") Январь
+																option(value="6") Январь
+											.filters-content__row
+												.filters-content__row-item
+													.default-input
+														select.default-input__input.default-input__input--select
+															option(value="0") Выбрать ситуацию
+															option(value="1") Выбрать ситуацию
+															option(value="2") Выбрать ситуацию
+															option(value="3") Выбрать ситуацию
+												.filters-content__row-item
+													.default-input
+														select.default-input__input.default-input__input--select
+															option(value="0") Выбрать Время
+															option(value="1") Выбрать Время
+															option(value="2") Выбрать Время
+															option(value="3") Выбрать Время
+											.filters-content__row
+												.filters-content__row-item
+													a.fancybox.default-btn.default-btn--bordered(href="#print-stats")
+														span.default-btn__text Показать статистику
+														
+							.filters-time__time
+								.f-time
+									.f-time__item
+										.f-time__item-title Пустой зал
+										.f-time__item-text 1 час 23 минуты
+									.f-time__item
+										.f-time__item-title Много людей
+										.f-time__item-text 23 минуты
+									.f-time__item
+										.f-time__item-title За кассой никого
+										.f-time__item-text 9 минут
+									.f-time__item
+										.f-time__item-title Пришли люди
+										.f-time__item-text 2 часа 18 минут
+									.f-time__item
+										.f-time__item-title Пришли люди
+										.f-time__item-text 3 часа 38 минут
+					.last-seen__camera
+						.l-camera
+							.l-camera__video
+								video(muted="" poster="img/photos/camera-poster.jpg")
+				.users-list
+					.users-list__table
+						table.ul-table.ul-table--stats
+							thead
+								tr
+									th Дата
+									th Сотрудники
+									th Ситуации
+									//- th Фото
+							tbody
+								- for (let i = 0; i < 10; i++)
+									tr
+										td(data-title="Дата")="0"+i+".02.20"
+										td(data-title="Сотрудники") Ололоев Ололош, Ололоева Ололоша
+										td.ul-table__stats(data-title="Ситуации")
+											.stats
+												span.stats__item
+													span.stats__item-title Магазин открыт: 
+													span.stats__item-time 15 мин
+												span.stats__item
+													span.stats__item-title Пришли люди: 
+													span.stats__item-time 35 мин
+												span.stats__item
+													span.stats__item-title Ушли люди: 
+													span.stats__item-time 25 мин
+												span.stats__item
+													span.stats__item-title За кассой никого: 
+													span.stats__item-time 85 мин
+					.users-list__btn
+						a.default-btn.default-btn--bordered(href="#")
+							include ../img/ico-refresh.svg
+							<!-- default-btn--loading для анимации загрузки -->
+							span.default-btn__text Показать ещё
+		include inc/footer.pug
+		include inc/scripts.pug
