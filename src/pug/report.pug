@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Отчёт
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.report
+					.report__top
+						.report__top-back
+							a.default-btn.default-btn--bordered(href="#")
+								include ../img/ico-back.svg
+								span.default-btn__text Назад
+						.report__top-filter
+							.r-filter
+								.r-filter__select
+									.default-input
+										select.default-input__input.default-input__input--select
+											option(value="0") Муратшин Денис 
+											option(value="1") Муратшин Денис 
+											option(value="2") Муратшин Денис 
+											option(value="3") Муратшин Денис 
+											option(value="4") Муратшин Денис 
+											option(value="5") Муратшин Денис 
+								.r-filter__select
+									.default-input
+										select.default-input__input.default-input__input--select
+											option(value="0") Сентябрь
+											option(value="1") Сентябрь
+											option(value="2") Сентябрь
+											option(value="3") Сентябрь
+											option(value="4") Сентябрь
+											option(value="5") Сентябрь
+					.report__dates
+						.r-dates
+							.r-dates__title
+								.report-title Сентябрь
+							.r-dates__container
+								.r-dates__container-btn.r-dates__container-btn--prev
+									.dates-btn
+								.r-dates__container-list
+									.r-dates__list
+										.dates-list
+											- var days = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"]
+											- for (let date = 1, day = 0; date <= 31; date++, day++)
+												if (date == 11)
+													.dates-list__item.dates-list__item--from
+														.dl-item
+															if (day == 5 || day == 6)
+																.dl-item__day.dl-item__day--holiday=days[day]
+															else
+																.dl-item__day=days[day]
+															.dl-item__date=date
+												else if (date > 11 && date < 16)
+													.dates-list__item.dates-list__item--span
+														.dl-item
+															if (day == 5 || day == 6)
+																.dl-item__day.dl-item__day--holiday=days[day]
+															else
+																.dl-item__day=days[day]
+															.dl-item__date=date
+												else if (date == 16)
+													.dates-list__item.dates-list__item--to
+														.dl-item
+															if (day == 5 || day == 6)
+																.dl-item__day.dl-item__day--holiday=days[day]
+															else
+																.dl-item__day=days[day]
+															.dl-item__date=date
+												else
+													.dates-list__item
+														.dl-item
+															if (day == 5 || day == 6)
+																.dl-item__day.dl-item__day--holiday=days[day]
+															else
+																.dl-item__day=days[day]
+															.dl-item__date=date
+												- if (day == 6) day = -1
+
+								.r-dates__container-btn.r-dates__container-btn--next
+									.dates-btn
+					.report__results
+						.report__results-title
+							.report-title Муратшин Денис
+						.r-results
+							.r-results__list
+								- for (let date = 11; date <= 16; date++)
+									.r-results__list-item
+										.r-result
+											.r-result__day
+												.rr-item
+													.rr-item__title День
+													.rr-item__text=date+" сентября"
+											.r-result__time
+												.rr-item
+													.rr-item__title Время
+													.rr-item__text 02 часа 12 минут
+							.r-results__summary
+								.rr-summary
+									.rr-summary__title Итог
+									.rr-summary__text
+										b 12 часа 72 минут
+		include inc/footer.pug
+		include inc/scripts.pug

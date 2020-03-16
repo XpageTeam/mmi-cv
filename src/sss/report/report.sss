@@ -1,0 +1,53 @@
+@import "dates.sss"
+@import "results.sss"
+
+.report
+
+	&__top
+		display: flex
+		justify-content: space-between
+		margin: 0 0 40px
+
+	&__dates
+		margin: 0 0 30px
+
+	&__results
+
+		&-title
+			margin: 0 0 20px
+
+.r-filter
+	display: flex
+
+	&__select
+
+		&:not(:last-child)
+			margin-right: 27px
+
+		.default-input__input
+
+			&--select
+				background-color: transparent
+
+.report-title
+	color: #333333
+	font-weight: 500
+	font-size: em(20)
+	line-height: calc(24 / 20)
+
+@media (max-width: 660px)
+	.report
+
+		&__top
+			display: block
+
+			&-back
+				margin: 0 0 30px
+
+	.r-filter
+		display: block
+
+		&__select
+
+			&:not(:last-child)
+				margin: 0 0 20px

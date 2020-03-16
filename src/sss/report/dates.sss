@@ -1,0 +1,157 @@
+.r-dates
+
+	&__title
+		margin: 0 0 20px
+
+	&__container
+		background: #ffffff
+		border-radius: 5px
+		padding: 18px 54px
+		display: flex
+		align-items: center
+
+		&-btn
+			flex: none
+
+			&--prev
+				transform: rotateZ(180deg)
+
+		&-list
+			flex: 1 1 auto
+
+.dates-btn
+	border-radius: 50%
+	position: relative
+	size: 24px
+	background: var(--main-color)
+	cursor: pointer
+
+	&:after
+		content: ""
+		position: absolute calc(50% - 3px) * * calc(50% - 3px)
+		size: 5px
+		border-top: 1px solid #fff
+		border-right: 1px solid #fff
+		transform: rotateZ(45deg)
+
+
+
+
+
+.dates-list
+	display: flex
+	flex-wrap: wrap
+	margin: 0 em(27)
+	margin-bottom: -25px
+
+	&__item
+		flex: none
+		margin-bottom: 25px
+
+		&:not(:first-child):not(:last-child)
+			padding-inline: 5px
+
+		&--from, &--to, &--span
+			background: rgba(51, 157, 255, 0.08)
+
+		&--from, &--to
+			position: relative
+
+			.dl-item
+				background: #fff
+				border-color: var(--main-color)
+				position: relative
+				z-index: 1
+
+			&:before
+				content: ""
+				position: absolute 0 *
+				min-width: 50%
+				background: #fff
+
+		&--from
+
+			&:before
+				left: 0 !important
+				right: 50%
+
+		&--to
+
+			&:before
+				right: 0
+				left: 50%				
+
+.dl-item
+	text-align: center
+	padding: 10px
+	cursor: pointer
+	border-radius: 5px
+	border: 1px solid transparent
+
+	&__day
+		font-size: 12px
+		margin: 0 0 15px
+		// letter-spacing: 0.02em
+
+		&--holiday
+			color: #BEC2D2
+
+	&__date
+		font-size: 14px
+
+
+
+@media (max-width: 1600px)
+	.r-dates
+
+		&__container
+			padding: 15px 30px
+
+	.dates-list
+		margin-bottom: -10px
+
+		&__item
+			margin-bottom: 10px
+
+	.dl-item
+		padding: 8px
+
+
+
+@media (max-width: 1200px)
+	.r-dates
+		
+		&__container
+			padding: 12px 15px
+
+@media (max-width: 660px)
+	.r-dates
+		position: relative
+
+		&__container
+			display: block
+
+			&-btn
+				position: absolute 0 * *
+
+				&--next
+					right: 0
+
+				&--prev
+					right: 30px
+
+	.dates-list
+		margin: 0
+		display: grid
+		grid-template-columns: repeat(7, 1fr)
+
+		&__item
+			margin: 0
+			padding: 0 !important
+
+			&:nth-child(n + 8)
+
+				.dl-item
+
+					&__day
+						display: none

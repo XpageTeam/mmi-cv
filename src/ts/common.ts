@@ -2,6 +2,7 @@ import domReady from "./xpage/ready";
 import App from "./xpage/core";
 
 domReady(() => {
+	if (window.matchMedia("(max-width: 1000px)").matches) return;
 
 	initMySelect();
 

@@ -1,0 +1,179 @@
+.r-results
+	display: flex
+
+	&__summary
+		flex: none
+		margin-left: 32px
+	
+	&__list
+		flex: 1 1 auto
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -30px -32px
+
+		&:not(:last-child) &-item
+			width: calc((100% - 32px * 4) / 4)
+
+		&:last-child &-item
+			width: calc((100% - 32px * 3) / 3)
+
+		&-item
+			margin: 0 0 30px 32px
+			display: flex
+			flex-direction: column
+
+.r-result
+	display: flex
+	background: #ffffff
+	border-radius: 5px
+	padding: 13px 12px
+	flex: 1 1 auto
+
+	&__day
+		margin-right: 20px
+		width: 140px
+		flex: none
+		border-radius: inherit
+		background: rgba(51, 157, 255, 0.08)
+		padding: 15px 18px
+
+	&__time
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+.rr-item
+
+	&__title
+		font-size: em(14)
+		color: #C1CCD7
+		margin: 0 0 10px
+
+	&__text
+		font-size: em(15)
+
+.rr-summary
+	position: sticky
+	top: 120px
+	min-width: 260px
+	background: rgba(162, 210, 255, 0.08)
+	border: 1px solid var(--main-color)
+	border-radius: 5px
+	padding: 28px 38px
+	color: var(--main-color)
+
+	&__title
+		font-size: em(14)
+		margin: 0 0 7px
+
+	&__text
+		font-size: em(16)
+
+.rr-detail
+	display: flex
+	align-items: center
+	background: #fff
+	flex: 1 1 auto
+	border-radius: 5px
+	padding: 14px 14px 13px
+
+	&__title
+		margin-right: 20px
+		max-width: 185px
+		font-size: em(15)
+		font-weight: 500
+
+	&__desc
+		width: 220px
+		flex: none
+		border: 1px dashed var(--border-color)
+		margin-left: auto
+		padding: 15px 20px
+
+		&-title
+			color: #C1CCD7
+			font-size: em(14)
+			margin: 0 0 5px
+
+		&-text
+			font-weight: 500
+			font-size: em(15)
+			color: var(--main-color)
+
+
+@media (max-width: 1600px) and (min-width: 1320px)
+	.r-results__list
+		margin: 0 0 -20px -20px
+
+		&:not(:last-child) &-item
+			width: calc((100% - 20px * 4) / 4)
+		
+		&-item
+			margin: 0 0 20px 20px
+
+@media (max-width: 1600px)
+	.r-results__summary
+		margin-left: 20px
+
+	.rr-summary
+		min-width: 160px
+		padding: 20px
+
+@media (max-width: 1320px) and (min-width: 1100px)
+	.r-results__list
+		margin: 0 0 -20px -20px
+
+		&:not(:last-child) &-item
+			width: calc((100% - 20px * 3) / 3)
+		
+		&-item
+			margin: 0 0 20px 20px
+
+@media (max-width: 1100px) and (min-width: 660px)
+	.r-results__list
+		margin: 0 0 -20px -20px
+
+		&:not(:last-child) &-item
+			width: calc((100% - 20px * 2) / 2)
+
+		&-item
+			margin: 0 0 20px 20px
+
+@media (max-width: 1000px) 
+	.r-results
+		display: block
+
+		&__summary
+			margin: 0
+			margin: 20px -20px 0
+			position: sticky
+			background-color: var(--body-bg-color)
+			bottom: 0
+
+	.rr-summary
+		border-radius: 0
+		border-left: none
+		border-right: none
+
+
+@media (max-width: 660px)
+	.r-results__list
+		margin: 0
+
+		&-item
+			width: 100% !important
+			margin: 0
+
+			&:not(:first-child)
+				margin: 20px 0 0
+
+	.rr-detail
+		display: block
+
+		&__title
+			margin: 0 0 20px 0
+			max-width: none
+
+		&__desc
+			margin-left: 0
+			width: 100%
