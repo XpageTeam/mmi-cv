@@ -1,3 +1,14 @@
+.loading
+	position: relative
+
+	&:after
+		content: ""
+		position: absolute 0
+		background: url("../img/ico-loading-processed.svg") center no-repeat, rgba(255,255,255, .3)
+		background-size: 100px
+		backdrop-filter: blur(5px)
+		z-index: 30
+
 .r-dates
 
 	&__title
