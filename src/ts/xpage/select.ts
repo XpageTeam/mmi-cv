@@ -71,6 +71,17 @@ class select{
 		this.createSelect()
 	}
 
+	public removeSelect(){
+		this.el.MySelect = null;
+
+		this.el.closest("div").querySelector(".my-select__list-cont").remove();
+	}
+
+	public update(){
+		this.removeSelect();
+		new select(this.el);
+	}
+
 	private createSelect(){
 		const fakeDiv = document.createElement("div");
 
