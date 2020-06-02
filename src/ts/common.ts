@@ -1,5 +1,15 @@
-import App from "./xpage/core";
-import select from './xpage/select';
+// import App from "./xpage/core";
+// import select from './xpage/select';
+import "./charts"
+
+
+declare global {
+    interface Window {
+		$: any;
+		makeCharts: Function,
+		Chart: any
+    }
+}
 
 (function(){
 	// if (window.matchMedia("(max-width: 1000px)").matches) return;

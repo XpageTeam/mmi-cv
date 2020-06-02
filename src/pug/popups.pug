@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main
+		include inc/header.pug
+		main#content
+			.wrapper
+				a.default-btn.fancybox(href="#stats") Статистика
+			.popup#stats
+				.popup__title Свободное время
+				.popup__body
+					canvas#charts(height="300")
+		include inc/footer.pug
+		include inc/scripts.pug
