@@ -39,6 +39,11 @@ window.makeCharts = (minutes: Array<number>) => {
 
 	return new window.Chart(chartsCanvas, {
 		type: 'bar',
+		ticks:{
+			beginAtZero: !0,
+			scaleStartValue: 0,
+			suggestedMax: 60
+		},
 		data: {
 			labels: [
 				'09:00 - 10:00',
