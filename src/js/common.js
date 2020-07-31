@@ -60,4 +60,21 @@ document.addEventListener("DOMContentLoaded", function(){
 	// 	},
 	// 	options: chartOptions
 	// });
+
+
+
+	$(".user-toggle-menu .menu-item__tab").click(function(){
+		var $this = $(this);
+	
+	
+	
+		
+	
+		$this.toggleClass("active")
+	
+		$this.next('.menu-item__content').slideToggle();
+		swiperSliderInit();
+	  });
+
+
 });

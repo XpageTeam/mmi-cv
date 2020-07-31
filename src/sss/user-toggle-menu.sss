@@ -1,0 +1,252 @@
+.user-toggle-menu
+    margin-top: 47px
+    .active
+        border-bottom-left-radius: 0 !important
+        border-bottom-right-radius: 0 !important
+        .menu-item__triangle
+            transform: rotate(-225deg)
+    &__item
+        
+        margin-bottom: 22px
+
+    &__btn
+        margin-top: 67px
+        display: flex
+        justify-content: center
+
+    .menu-item
+        &__tab
+            padding: 14px 33px
+            width: 100%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            background-color: #fff
+            border-radius: 6px
+            cursor: pointer
+
+        &__title
+            font-size: rem(18)
+            font-weight: 500
+
+        &__triangle
+            height: 6px
+            width: 6px
+            border-bottom: 1px solid #000000
+            border-left: 1px solid #000000
+            transform: rotate(-45deg)
+            transition: transform .3s ease-in-out
+
+
+
+    .menu-item__content
+        display: none
+            
+
+
+    .menu-content
+        &__lines
+            padding: 31px 33px 27px
+            background-color: #ffffff
+            border-top: 1px solid #E7E7E7
+            border-bottom-right-radius: 6px
+            border-bottom-left-radius: 6px
+
+    .line
+
+        &__progress-content
+            width: 100%
+
+            padding-top: 34px
+
+        &__numbers
+            display: flex
+            justify-content: space-between
+            margin-top: 17px
+
+            span
+                color: #ADADAD
+                font-size: rem(12)
+        
+        &__item
+            display: flex
+            align-items: center
+
+        &__title
+            font-size: rem(14)
+            width: 45px
+            margin-right: 45px
+
+        &__progress
+            height: 4px
+            border-radius: 5px
+            width: 100%
+            position: relative
+
+            &--red
+                background-color: var(--line-color-red)
+
+            &--green
+                background-color: var(--line-color-green)
+
+            &--orange
+                background-color: var(--line-color-orange)
+
+        
+        &__add
+            height: 4px
+            border-radius: 5px
+            position: absolute
+            top: 0
+            bottom: 0
+            z-index: 5
+
+            &--green
+                width: 20%
+                left: 60%
+                z-index: 10
+                background-color: var(--line-color-green)
+                
+            &--orange
+                width: 30%
+                left: 30%
+                z-index: 10
+                background-color: var(--line-color-orange)
+
+        
+        &__circle
+
+    .menu-content
+        &__value
+            margin-top: 18px
+            padding-bottom: 18px
+            border-bottom: 1px solid #E2E2E2
+            display: flex
+            &:last-of-type
+                padding-bottom: 0
+                border-bottom: 0
+
+    .menu-value__item
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        &:not(:first-of-type)
+            margin-left: 11px
+
+        &--bad
+            &::after
+                content: ''
+                position: absolute
+                right: 12px
+                bottom: 23px
+                background-image: url(../img/bad.png)
+                background-size: cover
+                background-position: center
+                background-repeat: no-repeat
+                height: 21px
+                width: 48px
+
+        &--good
+            &::after
+                content: ''
+                position: absolute
+                right: 12px
+                bottom: 23px
+                background-image: url(../img/good.png)
+                background-size: cover
+                background-position: center
+                background-repeat: no-repeat
+                height: 21px
+                width: 48px
+
+        &--perfect
+            &::after
+                content: ''
+                position: absolute
+                right: 12px
+                bottom: 23px
+                background-image: url(../img/perfect.png)
+                background-size: cover
+                background-position: center
+                background-repeat: no-repeat
+                height: 21px
+                width: 48px
+            
+
+    .menu-value
+        &__item
+            width: calc((100% - 44px) / 4)
+            padding: 18px 79px 23px 23px
+            background-color: #ffffff
+            border-radius: 6px
+            position: relative
+
+            
+           
+
+
+        &__left
+            width: 75%
+            display: flex
+
+        &__right
+            width: 25%
+            display: flex
+            padding-left: 70px
+            align-items: center
+            justify-content: space-between
+
+        &__time
+            padding: 15px 21px
+            border: 1px #E2E2E2 solid
+            border-radius: 6px
+            width: 90px
+            text-align: center
+
+        &__photo
+            padding-right: 18px
+            position: relative
+            display: block
+            color: #5F9AE3
+            &:after
+                position: absolute
+                content: ''
+                background-image: url(../img/ico-select-arrow.svg)
+                background-repeat: no-repeat
+                background-size: cover
+                transform: rotate(-90deg) translateY(-50%)
+                height: 6px
+                width: 9px
+                right: 0
+                top: 40%
+
+    .value-item
+        &__title
+            font-size: 11px
+            margin-bottom: 12px
+            font-weight: 500
+
+        &__line
+            position: relative
+            height: 4px
+            width: 100%
+            background-color: rgba(160, 160, 188, .3)
+            border-radius: 5px
+
+    .progress-line
+        position: absolute
+        border-radius: 5px
+        top: 0
+        left: 0
+        bottom: 0
+        &--red
+            background-color: var(--line-color-red)
+            width: 90%
+
+        &--green
+            background-color: var(--line-color-green)
+            width: 60%
+
+        &--orange
+            background-color: var(--line-color-orange)
+            width: 40%

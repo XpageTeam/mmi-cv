@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.last-seen
+					.last-seen__profile
+						//- .last-user
+							.last-user__title Последний замечен
+							.last-user__profile
+								.user
+									figure.user__img
+										img(src="img/photos/user-img.jpg")
+										<!-- user-dot--absence если отсутствует -->
+										.user-dot.user-dot--working
+									.user__desc
+										.ud
+											.ud__name Дмитрий Жердев
+											.ud__row
+												.ud__row-title Должность
+												.ud__row-text Руководитель отдела разработки
+											.ud__row
+												.ud__row-title Подразделение
+												.ud__row-text Отдел разработки
+											.ud__status 
+												<!-- user-status--absence если отсутствует -->
+												.user-status.user-status--working Работает
+							.last-user__btns
+								.lu-btns
+									.lu-btns__item
+										a.default-btn(href="#") 
+											span.default-btn__text Перейти в профиль
+									.lu-btns__item
+										a.default-btn.default-btn--bordered(href="#")
+											include ../img/ico-photo.svg
+											span.defaul-btn__text Показать фото
+							.last-user__list
+								.lu-list
+									.lu-list__row
+										.lu-list__row-camera
+											div Камера на входе
+											div.subtitle (первая запись)
+										.lu-list__row-date 23.01.2020
+										.lu-list__row-time 14:30:13
+									.lu-list__row
+										.lu-list__row-camera
+											div Камера на входе
+											div.subtitle (последняя запись)
+										.lu-list__row-date 23.01.2020
+										.lu-list__row-time 14:30:13
+									.lu-list__row
+										.lu-list__row-camera
+											div Камера на выходе
+											div.subtitle (последняя запись)
+										.lu-list__row-date 23.01.2020
+										.lu-list__row-time 14:30:13
+							.last-user__summary
+								.last-user__summary-title Провел на работе
+								.last-user__summary-summary 08:13:35
+						.filters-time
+							.filters-time__filters
+								form.filters(action="#")
+									.filters__title Фильтры
+									.filters__content
+										.filters-content
+											.filters-content__row
+												- for (let i = 0; i < 1; i++)
+													.filters-content__row-item
+														.default-input
+															select.default-input__input.default-input__input--select
+																option(value="0") 23
+																option(value="1") 23
+																option(value="2") 23
+																option(value="3") 23
+																option(value="4") 23
+																option(value="5") 23
+														.default-input
+															select.default-input__input.default-input__input--select
+																option(value="0") Январь
+																option(value="1") Январь
+																option(value="2") Январь
+																option(value="3") Январь
+																option(value="4") Январь
+																option(value="5") Январь
+																option(value="6") Январь
+											.filters-content__row
+												.filters-content__row-item
+													.default-input
+														select.default-input__input.default-input__input--select
+															option(value="0") Выбрать ситуацию
+															option(value="1") Выбрать ситуацию
+															option(value="2") Выбрать ситуацию
+															option(value="3") Выбрать ситуацию
+												.filters-content__row-item
+													.default-input
+														select.default-input__input.default-input__input--select
+															option(value="0") Выбрать Время
+															option(value="1") Выбрать Время
+															option(value="2") Выбрать Время
+															option(value="3") Выбрать Время
+											.filters-content__row
+												.filters-content__row-item
+													input.default-btn(type="submit" value="Применить фильтры")
+												.filters-content__row-item
+													a.fancybox.default-btn.default-btn--bordered(href="#print-stats")
+														include ../img/ico-print.svg
+														span.default-btn__text Распечатать статистику
+														
+							.filters-time__time
+								.f-time
+									.f-time__item
+										.f-time__item-title Пустой зал
+										.f-time__item-text 1 час 23 минуты
+									.f-time__item
+										.f-time__item-title Много людей
+										.f-time__item-text 23 минуты
+									.f-time__item
+										.f-time__item-title За кассой никого
+										.f-time__item-text 9 минут
+									.f-time__item
+										.f-time__item-title Пришли люди
+										.f-time__item-text 2 часа 18 минут
+									.f-time__item
+										.f-time__item-title Пришли люди
+										.f-time__item-text 3 часа 38 минут
+					.last-seen__camera
+						.l-camera
+							.l-camera__video
+								video(muted="" poster="img/photos/camera-poster.jpg")
+							//- .l-camera__toggler
+								.camera-toggler
+									.camera-toggler__text Вход
+									.camera-toggler__btn
+										.ct-btn.ct-btn--left
+											<!-- ct-btn--right для переключения в другую сторону -->
+									.camera-toggler__text Выход
+				.user-toggle-menu
+					.user-toggle-menu__item
+						.menu-item__tab
+							.menu-item__title
+								| 23 января 2020
+							.menu-item__triangle
+						.menu-item__content
+							.menu-content__lines
+								.line__item
+									.line__title
+										| Цех
+									.line__progress.line__progress--red
+										.line__add.line__add--orange
+										.line__add.line__add--green
+										.line__circle
+								.line__item
+									.line__title
+										| Люди
+									.line__progress-content
+										.line__progress.line__progress--red
+											.line__add.line__add--orange
+											.line__add.line__add--green
+										.line__numbers
+											span 8:00
+											span 9:00
+											span 10:00
+											span 11:00
+											span 12:00
+											span 13:00
+											span 14:00
+											span 15:00
+											span 16:00
+											span 17:00
+											span 18:00
+											span 19:00
+											span 20:00
+											span 21:00
+											span 22:00
+											span 23:00
+											span 00:00
+											span 01:00
+											span 02:00
+											span 03:00
+											span 04:00
+											span 05:00
+											span 06:00
+											span 07:00
+
+							.menu-content__value
+								.menu-value__left
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+								.menu-value__right
+									.menu-value__time
+										| 16:40
+									a.menu-value__photo(href="") Посмотреть фото
+
+							.menu-content__value
+								.menu-value__left
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+									.menu-value__item.menu-value__item--perfect
+										.value-item__title
+											| Чистый цех
+										.value-item__line
+											.progress-line.progress-line--green
+
+								.menu-value__right
+									.menu-value__time
+										| 16:40
+									a.menu-value__photo(href="") Посмотреть фото
+
+							.menu-content__value
+								.menu-value__left
+									.menu-value__item.menu-value__item--good
+										.value-item__title
+											| Люди соблюдают дистанцию
+										.value-item__line
+											.progress-line.progress-line--orange
+
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+									.menu-value__item.menu-value__item--good
+										.value-item__title
+											| Люди соблюдают дистанцию
+										.value-item__line
+											.progress-line.progress-line--orange
+
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+
+								.menu-value__right
+									.menu-value__time
+										| 11:11
+									a.menu-value__photo(href="") Посмотреть фото
+
+							.menu-content__value
+								.menu-value__left
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+									.menu-value__item.menu-value__item--perfect
+										.value-item__title
+											| Чистый цех
+										.value-item__line
+											.progress-line.progress-line--green
+
+								.menu-value__right
+									.menu-value__time
+										| 16:40
+									a.menu-value__photo(href="") Посмотреть фото
+
+					.user-toggle-menu__item
+						.menu-item__tab
+							.menu-item__title
+								| 23 января 2020
+							.menu-item__triangle
+						.menu-item__content
+							.menu-content__lines
+								.line__item
+									.line__title
+										| Цех
+									.line__progress.line__progress--red
+										.line__add.line__add--orange
+										.line__add.line__add--green
+										.line__circle
+								.line__item
+									.line__title
+										| Люди
+									.line__progress-content
+										.line__progress.line__progress--red
+											.line__add.line__add--orange
+											.line__add.line__add--green
+										.line__numbers
+											span 8:00
+											span 9:00
+											span 10:00
+											span 11:00
+											span 12:00
+											span 13:00
+											span 14:00
+											span 15:00
+											span 16:00
+											span 17:00
+											span 18:00
+											span 19:00
+											span 20:00
+											span 21:00
+											span 22:00
+											span 23:00
+											span 00:00
+											span 01:00
+											span 02:00
+											span 03:00
+											span 04:00
+											span 05:00
+											span 06:00
+											span 07:00
+
+							.menu-content__value
+								.menu-value__left
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+								.menu-value__right
+									.menu-value__time
+										| 16:40
+									a.menu-value__photo(href="") Посмотреть фото
+
+							.menu-content__value
+								.menu-value__left
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+									.menu-value__item.menu-value__item--perfect
+										.value-item__title
+											| Чистый цех
+										.value-item__line
+											.progress-line.progress-line--green
+
+								.menu-value__right
+									.menu-value__time
+										| 16:40
+									a.menu-value__photo(href="") Посмотреть фото
+
+							.menu-content__value
+								.menu-value__left
+									.menu-value__item.menu-value__item--good
+										.value-item__title
+											| Люди соблюдают дистанцию
+										.value-item__line
+											.progress-line.progress-line--orange
+
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+									.menu-value__item.menu-value__item--good
+										.value-item__title
+											| Люди соблюдают дистанцию
+										.value-item__line
+											.progress-line.progress-line--orange
+
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+
+								.menu-value__right
+									.menu-value__time
+										| 16:40
+									a.menu-value__photo(href="") Посмотреть фото
+
+							.menu-content__value
+								.menu-value__left
+									.menu-value__item.menu-value__item--bad
+										.value-item__title
+											| Пустой цех
+										.value-item__line
+											.progress-line.progress-line--red
+
+									.menu-value__item.menu-value__item--perfect
+										.value-item__title
+											| Чистый цех
+										.value-item__line
+											.progress-line.progress-line--green
+
+								.menu-value__right
+									.menu-value__time
+										| 16:40
+									a.menu-value__photo(href="") Посмотреть фото
+
+					.user-toggle-menu__btn
+						a.default-btn.default-btn--bordered(href="#")
+							include ../img/ico-refresh.svg
+							<!-- default-btn--loading для анимации загрузки -->
+							span.default-btn__text Показать ещё
+
+			
+
+
+
+				//- .users-list
+				//- 	.users-list__table
+				//- 		table.ul-table
+				//- 			thead
+				//- 				tr
+				//- 					th Время
+				//- 					th Ситуация
+				//- 					th Дата
+				//- 					//- th Фото
+				//- 			tbody
+				//- 				each date, i in [{title: "23 января 2020", status: "Много людей"}, {title: "28 января 2020", status: "Нет продавцов"}, {title: "29 января 2020", status: "Только продавцы"}, {title: "01 февраля 2020", status: "Мало людей"}, {title: "02 февраля 2020", status: "Много людей"}, {title: "08 февраля 2020", status: "Много людей"}, {title: "14 февраля 2020", status: "Много людей"}]
+				//- 					tr
+				//- 						if (date.status == "Много людей")
+				//- 							td.row-status.row-status--large(data-title="Дата")
+				//- 								div 16:40
+				//- 						else if (date.status == "Нет продавцов")
+				//- 							td.row-status.row-status--no_salers(data-title="Дата")
+				//- 								div 16:40
+				//- 						else if (date.status == "Только продавцы")
+				//- 							td.row-status.row-status--only_salers(data-title="Дата")
+				//- 								div 16:40
+				//- 						else if (date.status == "Мало людей")
+				//- 							td.row-status.row-status--small(data-title="Дата")
+				//- 								div 16:40
+				//- 						td(data-title="Ситуация")
+				//- 							div=date.status
+				//- 						td(data-title="Время")
+				//- 							div=date.title
+				//- 						//- td(data-title="Фото")
+				//- 							div 08:40:03
+				//- 								a.photo(data-fancybox="" href="#")
+				//- 	.users-list__btn
+				//- 		a.default-btn.default-btn--bordered(href="#")
+				//- 			include ../img/ico-refresh.svg
+				//- 			<!-- default-btn--loading для анимации загрузки -->
+				//- 			span.default-btn__text Показать ещё
+		include inc/footer.pug
+		include inc/scripts.pug
